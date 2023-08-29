@@ -61,6 +61,13 @@ class ProveedoresController extends Controller
         return json_encode($json, true);
     }
 
+    //metodo por proveedor by Id
+    public function obtenerById($id){
+        $proveedor = Proveedores::find($id);
+
+        return response()->json($proveedor);
+    }
+
     //metodo para actualizar un proveedor
     public function update(Request $request, $id){
         $datos = array(
