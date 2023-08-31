@@ -24,3 +24,5 @@ Route::get('/proveedorById/{id}', [ProveedoresController::class, 'obtenerById'])
 Route::put('/actualizar/{id}', [ProveedoresController::class, 'update']);
 
 Route::delete('/eliminar/{id}', [ProveedoresController::class, 'destroy']);
+
+Route::get('/buscarProveedor/{buscar}', [ProveedoresController::class, 'buscarProveedor']);

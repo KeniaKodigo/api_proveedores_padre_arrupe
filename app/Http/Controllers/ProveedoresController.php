@@ -113,4 +113,18 @@ class ProveedoresController extends Controller
 
         return json_encode($json, true);
     }
+
+    //busqueda por nombre de proveedor
+    public function buscarProveedor($buscar){
+        /**
+         * $instructores = Instructor::select('name','email')->where('name', 'LIKE', '%'.$buscar .'%')->get();
+         */
+        if(empty($buscar)){
+            $proveedor = Proveedores::all();
+        }else{
+            $proveedor = Proveedores::select('*')->where('nombre', 'LIKE','%'.$buscar.'%')->get();
+        }
+        
+        return response()->json($proveedor);
+    }
 }
